@@ -1,2 +1,6 @@
 /.metadata/
 Servers/
+
+# Pymongo
+# virtual environment
+mongodb/Python/pymongo/pymongo
