@@ -17,4 +17,4 @@ class Book:
         self.book = None
     
     def mapper_no_id(self):
-        return {"isbn": self.isbn, "author": self.author, "price" : self.price, "quantity" : self.quantity}
+        return dict([("isbn", self.isbn), ("author", self.author), ("price", self.price), ("quantity", self.quantity)])
