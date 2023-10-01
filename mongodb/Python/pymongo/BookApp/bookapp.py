@@ -33,7 +33,56 @@ def start():
             except Exception as err:
                 pass
 
+        elif choice == 2:
+            try:
+                api.all_books_forward(book_collection)
+            except Exception as err:
+                pass
+        
+        elif choice == 3:
+            try:
+                api.all_books_reverse(book_collection)
+            except Exception as err:
+                print(err)
 
+        elif choice == 4:
+            try:
+                book_isbn = read_user_input("isbn")
+                api.book_by_isbn(book_collection, book_isbn)
+            except Exception as err:
+                print(err)
+
+        elif choice == 5:
+            try:
+                book_isbn = read_user_input("isbn")
+                api.delete_book_by_isbn(book_collection, book_isbn)
+            except Exception as err:
+                print(err)
+
+        elif choice == 6:
+            try:
+                api.sort_by_price_quantity(book_collection)
+            except Exception as err:
+                print(err)
+
+        elif choice == 7:
+            try:
+                print("Enter the new book details : ")
+                replace_isbn = read_user_input("isbn")
+                replace_author = read_user_input("author")
+                replace_price = int(read_user_input("price"))
+                replace_quantity = int(read_user_input("quantity"))
+                replace_book = Book(replace_isbn, replace_author, replace_price, replace_quantity)
+                isbn_to_replace = input("Enter isbn for the book to replace : ")
+                api.replace_book_by_isbn(book_collection, isbn_to_replace, replace_book)
+            except Exception as err:
+                print(err)
+
+        elif choice == 8:
+            try:
+                api.delete_books_below_price(book_collection, 200)
+            except Exception as err:
+                print(err)
 
 def menu():
     print("0. Exit.")
@@ -53,4 +102,3 @@ def read_user_input(inputData):
 
 if __name__ == "__main__":
     start()
-
