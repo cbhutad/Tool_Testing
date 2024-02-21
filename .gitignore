@@ -8,3 +8,7 @@ mongodb/Python/pymongo/pymongo
 # Pymongo/BookApp
 # virtual environment
 mongodb/Python/pymongo/Bookapp/bookappvenv
+
+# Selenium
+# virtual environment
+Selenium/venv
